@@ -1,0 +1,12 @@
+node_modules
+.env
+.env.*
+/dist
+/build
+/.vercel
+/prisma/*.db
+/apps/api/prisma/*.db
+/apps/api/prisma/*.db-journal
+/apps/web/dist
+coverage
+.DS_Store

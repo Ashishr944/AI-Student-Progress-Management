@@ -1,0 +1,264 @@
+:root {
+  --bg: #f6f2eb;
+  --accent: #4d7cfe;
+  --accent-dark: #1d3b9d;
+  --text: #1b1d1f;
+  --muted: #6a6d72;
+  --card: #ffffff;
+  --shadow: 0 15px 35px rgba(27, 29, 31, 0.12);
+  --radius: 20px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top left, #fff3d6, transparent 45%),
+    radial-gradient(circle at top right, #dce7ff, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.topnav .brand {
+  font-family: 'Literata', serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.topnav .links {
+  display: flex;
+  gap: 20px;
+}
+
+.topnav .links a {
+  font-weight: 500;
+}
+
+.dashboard {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 6px;
+  font-family: 'Literata', serif;
+}
+
+header p {
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.stat strong {
+  font-size: 24px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card h4 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+select {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  background: #fff;
+}
+
+button,
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover,
+.primary:hover {
+  transform: translateY(-1px);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--text);
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.login .card {
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.alert {
+  background: #ffe6e6;
+  color: #c0392b;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f7f7fb;
+}
+
+.row.header {
+  font-weight: 600;
+  background: transparent;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.status.success {
+  color: var(--accent-dark);
+}
+
+.status.error {
+  color: #c0392b;
+}
+
+.mini-list {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .topnav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dashboard {
+    padding: 24px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
