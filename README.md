@@ -326,7 +326,7 @@ Create a Web Service:
 - Runtime: `Node`
 - Root Directory: leave blank
 - Build Command: `npm install && npm run build:render`
-- Start Command: `npm run start:render`
+- Start Command: `npm start`
 - Health Check Path: `/api/health`
 
 Add environment variables:
@@ -356,7 +356,7 @@ https://your-render-service.onrender.com/api/health
 Prisma migrations run automatically before the server starts because the Render start command is:
 
 ```bash
-npm run start:render
+npm start
 ```
 
 To create the first admin on Render:
