@@ -269,6 +269,8 @@ If Prisma says it cannot reach PostgreSQL:
 brew services start postgresql@15
 ```
 
+On Render, this error usually means `DATABASE_URL` is still set to `localhost:5432`. Replace it with the Render PostgreSQL `Internal Database URL` in the web service environment variables.
+
 If Prisma says the database does not exist:
 
 ```bash
@@ -334,11 +336,13 @@ Add environment variables:
 
 ```env
 NODE_ENV=production
-DATABASE_URL=your_render_postgres_external_or_internal_connection_string
+DATABASE_URL=your_render_postgres_internal_database_url
 JWT_SECRET=your_strong_secret
 ADMIN_BOOTSTRAP_SECRET=your_bootstrap_secret
 CORS_ORIGIN=*
 ```
+
+Important: `DATABASE_URL` must not use `localhost`. In Render, open your PostgreSQL database page and copy the `Internal Database URL`, then paste it into the web service environment variable named `DATABASE_URL`.
 
 ### After Render Deploys
 
@@ -370,7 +374,6 @@ To create the first admin on Render:
 To seed demo users on Render, open the service Shell in Render and run:
 
 ```bash
-cd apps/api
 npm run seed
 ```
 
@@ -381,6 +384,8 @@ Demo credentials after seeding:
 | Admin | `admin@spm.com` | `Admin@123` |
 | Teacher | `teacher@spm.com` | `Teacher@123` |
 | Student | `student@spm.com` | `Student@123` |
+
+If the deployed app says `Invalid credentials` for the demo accounts, the Render database has not been seeded yet. Run the seed command above from the Render web service Shell, then try logging in again.
 
 ## Notes
 
