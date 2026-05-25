@@ -1,4 +1,5 @@
 # Student Progress Management System
+Live Demo: https://ai-student-progress-management.onrender.com
 
 A full-stack student progress management app for schools and coaching institutes. It includes separate login flows for admin, teacher, and student users, plus attendance tracking, marks management, assignment data, AI-style progress analysis, dashboards, and PDF progress reports.
 
